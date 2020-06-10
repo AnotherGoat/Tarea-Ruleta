@@ -2,11 +2,17 @@ import java.util.Random;
 
 public class RuedaFortuna {
 
+    //// Atributos
     /**
      * Casillas de la ruleta
      */
     private int[] casillas;
 
+    //// Constructores
+    public RuedaFortuna() {
+    }
+
+    //// Métodos
     /**
      * Inializa cada casilla de la ruleta con un valor al azar
      * @param numeroCasillas Número de casillas que tendrá la ruleta

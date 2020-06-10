@@ -66,4 +66,8 @@ public class RuedaFortuna {
         return min + num.nextInt(max-min);
     }
 
+    // Getters y Setters
+    public int[] getCasillas() {
+        return casillas;
+    }
 }

@@ -14,35 +14,27 @@ public class RuedaFortuna {
 
     //// Métodos
     /**
-     * Inializa cada casilla de la ruleta con un valor al azar
+     * <p>Inicializa cada casilla de la ruleta con un valor al azar</p>
+     * <p>Este valor será un múltiplo de 100 entre 100 y 10000</p>
      * @param numeroCasillas Número de casillas que tendrá la ruleta
      */
     public void inicializarRueda(int numeroCasillas){
         if(numeroCasillas<4 || numeroCasillas>100){
-            System.out.println("Error: número de casillas no válido");
+            System.out.println("Error: número de casillas debe estar entre 4 y 100");
         }
 
         else{
             casillas = new int[numeroCasillas];
-            System.out.println("La ruleta tiene los siguientes números: ");
+            System.out.println("La ruleta tiene "+numeroCasillas+" números: ");
 
             // Llena las casillas con números al azar y muestra los números
             for(int i=0; i<numeroCasillas; i++){
-                casillas[i] = randomInt();
-                System.out.print(casillas[i] + " ");
+                casillas[i] = randomEntre(1, 100)*100; // Múltiplo de 100 entre 100 y 10000
+                System.out.print("["+casillas[i]+"] ");
             }
 
-            System.out.println("");
+            System.out.print("\n");
         }
-    }
-
-    /**
-     * Retorna un int al azar
-     * @return Número al azar
-     */
-    public int randomInt(){
-        Random num = new Random();
-        return num.nextInt();
     }
 
     /**
@@ -50,6 +42,10 @@ public class RuedaFortuna {
      * @return Puntaje obtenido
      */
     public int lanzarRueda(){
+        if(casillas == null){
+            return -1;
+        }
+
         int puntajeObtenido = casillas[randomEntre(0 , casillas.length-1)];
         System.out.println("Ha obtenido "+puntajeObtenido+" puntos");
         return puntajeObtenido;

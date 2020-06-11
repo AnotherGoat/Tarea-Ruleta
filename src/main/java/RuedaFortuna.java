@@ -20,7 +20,7 @@ public class RuedaFortuna {
      */
     public void inicializarRueda(int numeroCasillas){
         if(numeroCasillas<4 || numeroCasillas>100){
-            System.out.println("Error: número de casillas debe estar entre 4 y 100");
+            System.out.println("Error: el número de casillas debe estar entre 4 y 100");
         }
 
         else{
